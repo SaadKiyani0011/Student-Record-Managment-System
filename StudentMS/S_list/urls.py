@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import (
+from S_list.views import (
     StudentListView,
     StudentCreateView,
     StudentUpdateView,

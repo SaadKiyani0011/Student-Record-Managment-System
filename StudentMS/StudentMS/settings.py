@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'S_list',
     'S_add',
     'S_edit',
+    'base',
 ]
 
 MIDDLEWARE = [

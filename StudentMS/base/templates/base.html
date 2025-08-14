@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'assests/css/S-list.css' %}">
+  <link rel="stylesheet" href="{% static 'assests/css/S-add.css' %} ">
+  <link rel="stylesheet" href="{% static 'assests/css/S-edit.css' %} ">
+</head>
+
+
+{% block S-list %}
+    
+{% endblock S-list %}
+
+
+{% block S-edit %}
+    
+{% endblock S-edit %}
+    
+
+{% block S-add %}
+    
+{% endblock S-add %}
+    
+
+
+
+  <script src="{% static 'assests/js/S-add.js' %}"></script>
+  <script src="{% static 'assests/js/S-edit.js' %}"></script>
+  <script src="{% static 'assests/js/S-list.js' %}"></script>
+</body>
+</html>
