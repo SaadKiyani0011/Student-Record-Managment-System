@@ -1,0 +1,225 @@
+
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4895ef;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #4cc9f0;
+      --danger: #f72585;
+      --warning: #f8961e;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: var(--box-shadow);
+    }
+
+    .btn:hover {
+      background-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .table-container {
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      overflow: hidden;
+      animation: fadeIn 0.8s ease;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+      background-color: var(--primary);
+      color: white;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    tr:hover {
+      background-color: #f1f3f5;
+      transform: scale(1.01);
+      transition: var(--transition);
+    }
+
+    .action-btns a {
+      color: var(--primary);
+      text-decoration: none;
+      margin: 0 5px;
+      transition: var(--transition);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .action-btns a.edit:hover {
+      background-color: rgba(67, 97, 238, 0.1);
+      color: var(--secondary);
+    }
+
+    .action-btns a.delete:hover {
+      background-color: rgba(247, 37, 133, 0.1);
+      color: var(--danger);
+    }
+
+    .action-btns a i {
+      margin-right: 5px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .table-container {
+        overflow-x: auto;
+      }
+      
+      table {
+        min-width: 600px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Search and filter section */
+    .search-filter {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      gap: 15px;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .search-box, .filter-box {
+      flex: 1;
+    }
+
+    .search-box input, .filter-box select {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      transition: var(--transition);
+    }
+
+    .search-box input:focus, .filter-box select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(72, 149, 239, 0.2);
+    }
+
+    /* Status badges */
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-active {
+      background-color: rgba(76, 201, 240, 0.1);
+      color: var(--success);
+    }
+
+    .status-inactive {
+      background-color: rgba(248, 150, 30, 0.1);
+      color: var(--warning);
+    }
+
+
+
+    

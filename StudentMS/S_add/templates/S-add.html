@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Student</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'assests/css/S-add.css' %}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-user-plus"></i> Add New Student</h1>
+      <a href="{% url 'S_list' %}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to List
+      </a>
+    </header>
+
+    <div class="form-container">
+      <form id="studentForm" action="#" method="post">
+        <div class="form-group">
+          <label for="full_name">
+            <i class="fas fa-user"></i> Full Name
+          </label>
+          <input type="text" id="full_name" name="full_name" required>
+          <div class="error-message" id="name-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="roll_number">
+            <i class="fas fa-id-card"></i> Roll Number
+          </label>
+          <input type="text" id="roll_number" name="roll_number" required>
+          <div class="error-message" id="roll-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="program">
+            <i class="fas fa-graduation-cap"></i> Program
+          </label>
+          <select id="program" name="program" required>
+            <option value="">Select Program</option>
+            <option value="BSCS">BSCS - Computer Science</option>
+            <option value="BSSE">BSSE - Software Engineering</option>
+            <option value="BSIT">BSIT - Information Technology</option>
+            <option value="BBA">BBA - Business Administration</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="gpa">
+            <i class="fas fa-star"></i> GPA
+          </label>
+          <input type="number" id="gpa" name="gpa" step="0.01" min="0" max="4" required>
+          <div class="error-message" id="gpa-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="admission_date">
+            <i class="fas fa-calendar-alt"></i> Admission Date
+          </label>
+          <input type="date" id="admission_date" name="admission_date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="status">
+            <i class="fas fa-check-circle"></i> Status
+          </label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="status" value="active" checked>
+              <span class="radio-btn"></span>
+              Active
+            </label>
+            <label>
+              <input type="radio" name="status" value="inactive">
+              <span class="radio-btn"></span>
+              Inactive
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="profile_pic">
+            <i class="fas fa-camera"></i> Profile Picture (Optional)
+          </label>
+          <div class="file-upload">
+            <input type="file" id="profile_pic" name="profile_pic" accept="image/*">
+            <label for="profile_pic" class="file-upload-label">
+              <i class="fas fa-cloud-upload-alt"></i> Choose File
+            </label>
+            <span id="file-name">No file chosen</span>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> Save Student
+          </button>
+          <button type="reset" class="btn btn-reset">
+            <i class="fas fa-undo"></i> Reset Form
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="{% static 'assests/js/S-add.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'assests/css/S-list.css' %}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-graduation-cap"></i> Student Record Manager</h1>
+      <a href="{% url 'S_add' %}" class="btn">
+        <i class="fas fa-user-plus"></i> Add New Student
+      </a>
+    </header>
+
+    <div class="search-filter">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search students...">
+      </div>
+      <div class="filter-box">
+        <select id="programFilter">
+          <option value="">All Programs</option>
+          <option value="BSCS">BSCS</option>
+          <option value="BSSE">BSSE</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BBA">BBA</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Roll Number</th>
+            <th>Program</th>
+            <th>GPA</th>
+            <th>Admission Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ali Khan</td>
+            <td>BSCS-001</td>
+            <td>BSCS</td>
+            <td>3.5</td>
+            <td>2023-09-01</td>
+            <td><span class="status-badge status-active">Active</span></td>
+            <td class="action-btns">
+              <a href="{% url 'S_edit' %}" class="edit"><i class="fas fa-edit"></i> Edit</a>
+              <a href="#" class="delete" onclick="confirmDelete(event)"><i class="fas fa-trash-alt"></i> Delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Fatima Noor</td>
+            <td>BSSE-002</td>
+            <td>BSSE</td>
+            <td>3.9</td>
+            <td>2022-09-01</td>
+            <td><span class="status-badge status-active">Active</span></td>
+            <td class="action-btns">
+              <a href="{% url 'S_edit' %}" class="edit"><i class="fas fa-edit"></i> Edit</a>
+              <a href="#" class="delete" onclick="confirmDelete(event)"><i class="fas fa-trash-alt"></i> Delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Ahmed Raza</td>
+            <td>BSIT-003</td>
+            <td>BSIT</td>
+            <td>3.2</td>
+            <td>2023-01-15</td>
+            <td><span class="status-badge status-inactive">Inactive</span></td>
+            <td class="action-btns">
+              <a href="{% url 'S_edit'%}" class="edit"><i class="fas fa-edit"></i> Edit</a>
+              <a href="#" class="delete" onclick="confirmDelete(event)"><i class="fas fa-trash-alt"></i> Delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Sara Khan</td>
+            <td>BBA-004</td>
+            <td>BBA</td>
+            <td>3.7</td>
+            <td>2022-11-10</td>
+            <td><span class="status-badge status-active">Active</span></td>
+            <td class="action-btns">
+              <a href="{% url 'S_edit' %}" class="edit"><i class="fas fa-edit"></i> Edit</a>
+              <a href="#" class="delete" onclick="confirmDelete(event)"><i class="fas fa-trash-alt"></i> Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<script src="{% static 'assests/js/S-list.js' %}"></script>
+  
+</body>
+</html>
