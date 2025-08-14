@@ -6,7 +6,7 @@ from .forms import StudentForm
 
 class StudentListView(ListView):
     model = Student
-    template_name = 'student_list.html'
+    template_name = 'S-list.html'
     context_object_name = 'students'
     paginate_by = 10
     
@@ -56,4 +56,4 @@ def student_list(request):
         'program_filter': program_filter,
         'search_query': search_query,
     }
-    return render(request, 'student_list.html', context)
+    return render(request, 'S-list.html', context)
