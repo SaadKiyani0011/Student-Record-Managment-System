@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'assests/css/S-edit.css' %} ">
+{% endblock css %}
+  
 {% block S-edit %}
   
 
@@ -123,3 +127,8 @@
   </div>
 
 {% endblock S-edit %}
+
+{% block js %}
+  <script src="{% static 'assests/js/S-edit.js' %}"></script>
+{% endblock js %}
+  
