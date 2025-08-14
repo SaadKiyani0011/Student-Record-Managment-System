@@ -26,7 +26,7 @@ class Student(models.Model):
     admission_date = models.DateField()
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='active')
     profile_pic = models.ImageField(
-        upload_to='student_profile_pics/',
+        upload_to='media/student_profile_pics/',
         null=True,
         blank=True
     )
